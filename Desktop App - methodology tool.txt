@@ -1,0 +1,24 @@
+Using dnSpy for cracking the password/ authentication
+	1. Right click the app and select Go to entry point
+	2. Click the Form1() - this could be anything depending on the naming convention
+		Application.Run(new Form1());
+	3. Check for the button or the message box for unsuccessful login
+		MessageBox.Show("Wrong username/password");
+	4. Right click the methond button1_click()); and select Edit Method Body
+		Set the if statement to brfalse.s / brtrue.s and click OK       OR     change the password directly(this is consider to be hardcoded)
+	5. Save the module by clicking File and select Save Module and rename the file.exe
+		Note: You should rename the original and the fake module should use the original file name
+
+Tools:
+1. dnSpy - reverse engineering and code analysis
+note: check what system are you using(eg. system32/system64) - https://github.com/dnSpy/dnSpy/releases
+2. Wireshark
+note: check what system are you using(eg. system32/system64) - https://www.wireshark.org/download.html
+
+3. de4dot - if the code is obfuscated use 
+https://github.com/de4dot/de4dot
+
+https://secureteam.co.uk/services/application-penetration-testing/desktop-application-security-assessment/
+https://www.guru99.com/vulnerability-assessment-testing-analysis.html
+https://www.softwaretestinghelp.com/how-to-test-application-security-web-and-desktop-application-security-testing-techniques/
+analysis tool - https://github.com/analysis-tools-dev/dynamic-analysis#security
