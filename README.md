@@ -1,2 +1,2 @@
-# WebVulMethodology
-Methodology on finding vulnerability on a website
+# VAPT Methodology
+Methodology on finding vulnerabilities in different applications.
