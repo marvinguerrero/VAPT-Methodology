@@ -1,0 +1,5 @@
+Methodology
+1. Request MBSS and config Files
+2. Scan the config file using Nessus audit tool
+3. MBSS vs config files
+4. Compare the result from Nessus tool to the MBSS vs Config files
