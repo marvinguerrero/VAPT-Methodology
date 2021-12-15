@@ -23,3 +23,32 @@ How to hack WIFI using TP-LINK WIFi Dongle   https://www.youtube.com/watch?v=zAW
  10:E9:53:E1:CD:BE  7C:04:D0:40:12:B8  -30    1e-24     38      148                            
  10:E9:53:E1:CD:BE  44:CB:8B:33:3B:EE  -47    0e- 0e     0       23                            
  10:E9:53:E1:CD:BE  88:AD:D2:81:6B:2A  	
+
+
+Tools 
+1. Kali Lunux
+1. Fern WIFI Cracker
+2. Wifi Cracker
+ a. iwconfig
+ b. aircrack-ng 
+3. 
+ 
+ 
+Methodology
+ 
+Wireless Reconnaissance 
+1. Request credentials (SSID and Password) and inventory of the target the WiFi/SSID
+2. Connect to the target wifi with the provided credentials
+3. sudo cat /etc/NetworkManager/system-connection/wifiname
+
+4. Open Fern WiFi Cracker on Kali Linux
+5. Scan available SSID / WiFi
+
+
+Possible Issues
+1. Weak / default password
+2. identifiable wifi name
+3. Weak encryption
+4. 
+
+ 
