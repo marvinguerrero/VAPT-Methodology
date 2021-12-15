@@ -1,0 +1,16 @@
+Methodology
+1. Request the following:
+  a. APK/API
+  b. Credentials
+  c. User matrix (if possible)
+  d. 
+
+2. Reconnaissance and Scanning
+  a. Drag and drop the APK/IPA to the MOBSF
+  b.
+  
+3. Exploitation
+  a. Install the application on the mobile device
+  b. Connect Burp Suite
+  
+4. Report creation
