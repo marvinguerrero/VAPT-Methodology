@@ -44,11 +44,13 @@ Wireless Reconnaissance
 4. Open Fern WiFi Cracker on Kali Linux
 5. Scan available SSID / WiFi
 
+6. Check traffics using Wireshark
+
 
 Possible Issues
 1. Weak / default password
 2. identifiable wifi name
 3. Weak encryption
-4. 
+4. Check unencrypted traffic
 
  
