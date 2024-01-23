@@ -1,1 +1,52 @@
+1. Go to firefox
+2. Add extension > APK Downloader > https://addons.mozilla.org/en-US/firefox/addon/apkgk-downloader/
+3. Search the app to be extracted
 
+
+Intall Mobsf for statis analysis > https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
+1. git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
+2. cd Mobile-Security-Framework-MobSF
+3. ./setup.sh
+4. ./run.sh
+5. visit localhost:8000
+6. Drag the apk extracted
+
+Install Genymotion
+1. Download -> https://www.genymotion.com/download/
+2. cd Downloads
+3. sudo chmod +x genymotion-*.bin
+4. sudo ./genymotion-*.bin
+5. Open geneymotion and creation account
+6. Click the pplus sign to add device
+
+Install adb
+1. sudo apt install adb 
+
+Bypass SSL Pinning using Frida
+$ pip install Frida
+$ pip install objection
+$ pip install frida-tools
+$ adb devices
+$ adb shell getprop ro.product.cpu.abi
+Download from > https://github.com/frida/frida/releases
+frida-server-16.1.11-android-x86_64.xz 
+extract
+Rename the file from frida-server-16.1.11-android-x86_64 to frida-server
+$ adb push frida-server /data/local/tmp/
+$ adb shell "chmod 777 /data/local/tmp/frida-server"
+$ adb shell "/data/local/tmp/frida-server &"
+this should be running from the backround
+open new termina
+$ frida-ps -U
+Find the appname > adb shell pm list packages | grep appname
+$ frida --codeshare akabe1/frida-multiple-unpinning -U -f <appname>
+
+
+
+https://prplbx.com/resources/blog/step-by-step-guide-to-building-an-android-pentest-lab/
+https://medium.com/@lightbulbr/install-burp-ca-as-a-system-level-trusted-ca-android-11-rooted-physical-device-5542fe96345f
+https://medium.com/@agmmnn/ssl-pinning-bypass-for-android-emulators-using-frida-702c6bf84e38
+
+
+note:
+to kill emulator > adb -s 127.0.0.1:6555 emu kill
