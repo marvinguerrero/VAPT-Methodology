@@ -86,6 +86,10 @@ a41:/ # mv /sdcard/<old_hash>.0 /system/etc/security/cacerts/<old_hash>.0
 a41:/ # chown root:root /system/etc/security/cacerts/*
 a41:/ # chmod 644 /system/etc/security/cacerts/*
 a41:/ # chcon u:object_r:system_file:s0 /system/etc/security/cacerts/*
+Navigate to Settings -> Security & Location -> Encryption & Credentials -> Trusted Credentials. Confirm that the certificate should now be installed as a system-trusted CA certificate.
+#PortSwigger
+
+
 
 
 
