@@ -1,3 +1,13 @@
+Tools
+1. Firefox
+2. APK Downloader
+3.Mobsf
+4. adb
+5. Genymotion
+6. Frida
+7. Burp
+
+
 1. Go to firefox
 2. Add extension > APK Downloader > https://addons.mozilla.org/en-US/firefox/addon/apkgk-downloader/
 3. Search the app to be extracted
@@ -21,6 +31,8 @@ Install Genymotion
 
 Install adb
 1. sudo apt install adb 
+
+Install Burp Cert to Android
 
 Bypass SSL Pinning using Frida
 $ pip install Frida
