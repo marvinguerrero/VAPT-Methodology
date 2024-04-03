@@ -1,11 +1,12 @@
 Tools
 1. Firefox
 2. APK Downloader
-3.Mobsf
-4. adb
-5. Genymotion
-6. Frida
-7. Burp
+3. Mobsf
+4. Yaazhini
+5. adb
+6. Genymotion
+7. Frida
+8. Burp
 
 
 1. Go to firefox
