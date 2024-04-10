@@ -1,0 +1,33 @@
+Blackbox testing
+1. Subdomain enumeration
+2. IP Block enumeration for website
+3. 
+
+Reconnaissance
+1. Wapplyzer
+2. Dnsdumpster
+
+Ping domain
+Wayback machine
+Nmap - port scanning
+Sniper - scanning
+Dirb - directory enumeration
+Shodan
+
+nmap
+nmap -sS -PN -p- --script=http-title example.com
+
+Tool
+1. https://github.com/thewhiteh4t/FinalRecon
+2. https://github.com/1N3/Sn1per
+
+Sources
+1. https://infosecwriteups.com/bug-hunting-methodology-for-beginners-20b56f5e7d19
+2. https://github.com/jhaddix/tbhm
+3. https://github.com/jhaddix/tbhm/blob/master/Fast%20Testing%20Checklist.md
+4. https://gist.github.com/setrus/a5af15df42b552a5f4d7af5612f7cca9
+5. https://github.com/cyspad/Weaponize-Your-Burp
+6. https://github.com/ranjbarhadi/Bug-bounty-methodology
+7. https://github.com/ManasHarsh/Bug-bounty-methodology
+8. https://github.com/ManasHarsh/Bug-bounty-methodology
+9. https://iamlucif3r.github.io/Bug-Hunting/
