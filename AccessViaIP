@@ -19,13 +19,13 @@ def check_access_via_ip(domain):
     except socket.error:
         return False, None
 
-def take_screenshot(ip, output_folder):
+def take_screenshot(ip, output_folder, idx):
     try:
         options = webdriver.FirefoxOptions()
         options.headless = True
         driver = webdriver.Firefox(options=options)
         driver.get(f"http://{ip}")  # Access the IP address
-        screenshot_path = os.path.join(output_folder, f"{ip}.png")
+        screenshot_path = os.path.join(output_folder, f"{idx}_{ip.replace('.', '_')}.png")
         driver.save_screenshot(screenshot_path)
         driver.quit()
         return screenshot_path
@@ -39,27 +39,39 @@ def get_results_from_file(file_path, output_folder):
 
     results = []
     with open(file_path, 'r') as file:
-        for line in file:
+        for idx, line in enumerate(file, start=1):
             domain = line.strip()
             access_via_ip, ip = check_access_via_ip(domain)
             if access_via_ip:
-                screenshot_path = take_screenshot(ip, output_folder)
+                screenshot_path = take_screenshot(ip, output_folder, idx)
                 accessible = check_accessibility(f"http://{ip}")
-                results.append((domain, access_via_ip, ip, accessible, screenshot_path))
+                results.append((idx, domain, access_via_ip, ip, accessible, screenshot_path))
             else:
-                results.append((domain, access_via_ip, ip, False, None))
+                results.append((idx, domain, access_via_ip, ip, False, None))
     return results
 
 def save_to_excel(results, output_excel):
     wb = Workbook()
     ws = wb.active
     ws.title = "Website Results"
-    headers = ["Website", "Access via IP", "IP Address", "Accessible via IP", "Screenshot Path"]
+    headers = ["#", "Website", "Access via IP", "IP Address", "Accessible via IP", "Screenshot Path"]
     ws.append(headers)
 
-    for website, access_via_ip, ip, accessible, screenshot_path in results:
-        row = [website, access_via_ip, ip, accessible, screenshot_path]
+    for row in results:
         ws.append(row)
+
+    # Apply formatting
+    for col in ws.columns:
+        max_length = 0
+        column = col[0].column_letter
+        for cell in col:
+            try:
+                if len(str(cell.value)) > max_length:
+                    max_length = len(cell.value)
+            except:
+                pass
+        adjusted_width = (max_length + 2) * 1.2
+        ws.column_dimensions[column].width = adjusted_width
 
     wb.save(output_excel + ".xlsx")  # Save as Excel file with ".xlsx" extension
     print(f"Results saved to {output_excel}.xlsx")
